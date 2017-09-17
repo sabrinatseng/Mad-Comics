@@ -4,10 +4,36 @@
 
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 </head>
 
 <script type="text/javascript" src="script.js"></script>
+
+<style type="text/css">
+	#box{
+		position:relative;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#background
+	{
+		position:absolute;
+		z-index: : 0;
+	}
+	#character
+	{
+		position:absolute;
+		z-index: 10;
+	}
+	#foreground
+	{
+		position:absolute;
+		z-index: 60
+	}
+</style>
 
 <body>
 	<div style="padding-left:50px; padding-right:50px">
@@ -29,16 +55,16 @@
 
 		  	<select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control-sm" id = "option1">
 		        <option selected value="none">(question)</option>
-		        <option value="1">"Should we tell him this is a TRAINING session???"</option>
-		        <option value="2">"Did YOU send these ninjas???"</option>
+		        <option value="images/dialog_1.png">"Should we tell him this is a TRAINING session???"</option>
+		        <option value="images/dialog_left_2.png">"Did YOU send these ninjas???"</option>
 	      	</select> 
 
 	      	<br></br>
 
 	      	<select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control-sm" id = "option2">
 	      		<option selected value="none">(exclamation)</option>
-		        <option value="1">"CHUNF!"</option>
-		        <option value="2">"AHHHHHH!"</option>
+		        <option value="images/dialog_CHNF.png">"CHUNF!"</option>
+		        <option value="images/dialog_AHHH.png">"AHHHHHH!"</option>
 	      	</select> 
 
 	      	<br></br>
@@ -96,8 +122,49 @@
 		<p id="test"></p>
 		<div id="story" style="padding-left:50px; padding-right:50px; padding-top:10px; padding-bottom:10px; line-height:50px"></div>
 		<div id="images">
-		<img id="image0">
-		<img id="image1">
+			<!-- BOX 1 -->
+			<div hidden class="box1" id="box">
+				<div class="ui box1">
+				<img id="background" name="background" src="images/bg1.png"/>
+				<img id="character" name="character" src="images/character_left.png"/>
+				<img id="character" name="character" src="images/ninja_right.png"/>
+				<img id="foreground" name="foreground" src="images/dialog_1.png"/>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$(".box1").each(function() {
+							$(this)
+			  					.mouseover(function() {
+			        				$('.box1').transition('hide').transition({animation:'tada'});
+			      				})
+			  				})
+					});
+				</script>
+			</div>
+
+			<!-- 
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			<! BOX 2 -->
+			<!-- <div class="box2" id="box" name="box2">
+				<div class="ui dialog">
+				<img id="background" src="images/bg23.png"/>
+				<img id="character" src="images/buildins1000.png"/>
+				<img id="character" src="images/hero1000.png"/>
+				<img id="foreground" name="foreground1" src="images/dialog_AHHH.png" />
+				</div>
+			</div>
+			<script type="text/javascript">
+					$(document).ready(function() {
+						$(".box2").each(function() {
+							$(this)
+			  					.mouseover(function() {
+			        				$('.box2').transition('hide').transition({animation:'jiggle'});
+			      				})
+			  				})
+					});
+				</script>
+			</div> --> 
 		</div>
 	</div>
 </body>
