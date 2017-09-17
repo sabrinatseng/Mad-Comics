@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+</head>
+
+<body>
+
+<style type="text/css">
+	#box{
+		position:relative;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	#background
+	{
+		position:absolute;
+		z-index: : 0;
+	}
+	#character
+	{
+		position:absolute;
+		z-index: 10;
+	}
+	#foreground
+	{
+		position:absolute;
+		z-index: 60
+	}
+</style>
+
+<h1>hello</h1>
+	  	<!-- BOX 1 -->
+		<div class="box1" id="box">
+			<div class="ui box1">
+			<img id="background" src="images/bg1.png"/>
+			<img id="character" src="images/character_left.png"/>
+			<img id="character" src="images/ninja_right.png"/>
+			<img id="foreground" src="images/dialog_1.png" />
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".box1").each(function() {
+						$(this)
+		  					.mouseover(function() {
+		        				$('.box1').transition('hide').transition({animation:'tada'});
+		      				})
+		  				})
+				});
+			</script>
+		</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<!-- BOX 2 -->
+		<div class="box2" id="box">
+			<div class="ui dialog">
+			<img id="background" src="images/bg23.png"/>
+			<img id="character" src="images/buildins1000.png"/>
+			<img id="character" src="images/hero1000.png"/>
+			<img id="foreground" src="images/dialog_AHHH.png" />
+			</div>
+		</div>
+		<script type="text/javascript">
+				$(document).ready(function() {
+					$(".box2").each(function() {
+						$(this)
+		  					.mouseover(function() {
+		        				$('.box2').transition('hide').transition({animation:'jiggle'});
+		      				})
+		  				})
+				});
+			</script>
+	</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
